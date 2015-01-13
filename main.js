@@ -1,11 +1,12 @@
 angular.module("myApp", [])
-.controller("MyController", function($scope){
+.controller("MyController", ["$scope", function($scope){
 	console.log('set up angular');
+	$scope.array = ["one", "two", "three"];
 	$scope.modalShown = false;
 	$scope.toggleModal = function() {
 		$scope.modalShown = !$scope.modalShown;
 	};
-})
+}])
 .directive("dialog", function(){
 	return {
 		restrict: 'E',
