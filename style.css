@@ -5,7 +5,16 @@ body {
   width: 100px;
   height: 100px;
   background-color: blue;
-  margin: 5px; }
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 5.5em; }
+  .container:hover {
+    background-color: rgba(0, 0, 255, 0.5); }
+    .container:hover:before {
+      content: "Select "; }
 
 .ng-modal-overlay {
   position: absolute;

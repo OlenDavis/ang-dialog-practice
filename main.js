@@ -1,7 +1,7 @@
 angular.module("myApp", [])
 .controller("MyController", ["$scope", function($scope){
 	console.log('set up angular');
-	$scope.array = ["one", "two", "three"];
+	$scope.array = ["1", "2", "3"];
 	$scope.modalShown = false;
 	$scope.toggleModal = function() {
 		$scope.modalShown = !$scope.modalShown;

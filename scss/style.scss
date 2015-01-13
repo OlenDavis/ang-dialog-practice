@@ -4,9 +4,21 @@ body {
 .container {
 	width: 100px;
 	height: 100px;
-	background-color: blue;
+	background-color: rgba(0, 0, 255, 1);
+	display: inline-block;
 	margin: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 5.5em;
+	&:hover {
+		background-color: rgba(0, 0, 255, .5);
+		&:before {
+			content: "Select ";
+		}
+	}
 }
+
 .ng-modal-overlay {
 	position: absolute;
 	top:0;
