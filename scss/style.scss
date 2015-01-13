@@ -35,6 +35,12 @@ body {
 	-o-transform: $transform;
 	transform: $transform;
 }
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
 
 .container {
 	width: 10em;
@@ -75,16 +81,19 @@ body {
 	width: 25px;
 	height: 25px;
 	background-color: blue;
+	@include transition(all .5s ease-out);
 	&:hover {
-		transition: all .5s;
-		background-color: red;	}
+		@include transition(all .5s ease);
+		background-color: red;
+		transition-timing-function: linear;
+	}
 	&:hover .forward-slash {
-		transition: all .5s;
+		@include transition(all .5s ease);
 		background-color: black;
 		@include transform(rotate(-45deg));
 	}
 	&:hover .backward-slash {
-		transition: all .5s;
+		@include transition(all .5s ease);
 		background-color: black;
 		@include transform(rotate(45deg));
 	}
@@ -96,6 +105,7 @@ body {
 	position: absolute;
 	top: 2px;
 	left: 12px;
+	@include transition(all .5s ease-out);
 }
 .backward-slash {
 	@extend .forward-slash;
