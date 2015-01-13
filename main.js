@@ -1,7 +1,16 @@
 angular.module("myApp", [])
 .controller("MyController", ["$scope", function($scope){
 	console.log('set up angular');
-	$scope.array = ["test1", "test2", "test3"];
+	$scope.dialogContexts = [{
+		title: 'A Dialog',
+		field: 'something'
+	}, {
+		title: 'Another Dialog',
+		field: 'something else'
+	}, {
+		title: 'And Another Dialog',
+		field: 'with this'
+	}];
 	$scope.modalShown = false;
 	$scope.toggleModal = function(selection) {
 		$scope.selected = selection;

@@ -8,9 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body ng-app="myApp" ng-controller="MyController">
-	<div class="container" ng-repeat="item in array" ng-click="toggleModal(item)">{{item}}</div>
+	<div class="container" ng-repeat="dialog in dialogContexts" ng-click="toggleModal(dialog)">{{dialog.title}}</div>
 	<dialog show='modalShown'>
-		{{selected}}
+		<div>
+		<div>{{selected.title}}</div>
+		<p>{{selected.field}}</p>
+		</div>
 	</dialog>
 </body>
 </html>

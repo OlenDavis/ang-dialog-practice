@@ -2,8 +2,8 @@ body {
   margin: 0; }
 
 .container {
-  width: 100px;
-  height: 100px;
+  width: 10em;
+  height: 10em;
   background-color: blue;
   display: inline-block;
   margin: 5px;
