@@ -1,9 +1,11 @@
 angular.module("myApp", [])
 .controller("MyController", ["$scope", function($scope){
 	console.log('set up angular');
-	$scope.array = ["1", "2", "3"];
+	$scope.array = ["test1", "test2", "test3"];
 	$scope.modalShown = false;
-	$scope.toggleModal = function() {
+	$scope.toggleModal = function(selection) {
+		$scope.selected = selection;
+		console.log(selection);
 		$scope.modalShown = !$scope.modalShown;
 	};
 }])
@@ -34,7 +36,7 @@ angular.module("myApp", [])
 			"<div class='ng-modal-overlay' ng-click='hideModal()'></div>" +
 			"<div class='ng-modal-dialog' ng-style='dialogStyle'>" +
 				"<div class='ng-modal-close' ng-click='hideModal()'></div>" +
-				"<div class='ng-modal-dialog-content' ng-transclude>" +
+				"<div class='ng-modal-dialog-content' ng-transclude></div>" +
 			"</div>" +
 		"</div>"
 	};
