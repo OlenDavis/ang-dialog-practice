@@ -22,14 +22,40 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); }
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeoverlay 0.5s;
+  -webkit-animation: fadeoverlay 0.5s; }
 
+@-webkit-keyframes fadeoverlay {
+  from {
+    background-color: transparent; }
+  to {
+    background-color: rgba(0, 0, 0, 0.5); } }
+@-moz-keyframes fadeoverlay {
+  from {
+    background-color: transparent; }
+  to {
+    background-color: rgba(0, 0, 0, 0.5); } }
+@-o-keyframes fadeoverlay {
+  from {
+    background-color: transparent; }
+  to {
+    background-color: rgba(0, 0, 0, 0.5); } }
+@keyframes fadeoverlay {
+  from {
+    background-color: transparent; }
+  to {
+    background-color: rgba(0, 0, 0, 0.5); } }
 .ng-modal-dialog {
   position: absolute;
   width: 50%;
   top: 40%;
   left: 25%;
   background-color: #fff;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
   box-shadow: 4px 4px 80px #000; }
 
 /*# sourceMappingURL=style.css.map */
