@@ -28,6 +28,13 @@ body {
         @content;
     }
 }
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+	transform: $transform;
+}
 
 .container {
 	width: 10em;
@@ -56,10 +63,42 @@ body {
 	background-color: rgba(0,0,0,.5);
 	@include animation(fadeoverlay .5s);
 }
-
 @include keyframes(fadeoverlay){
 	from {background-color: rgba(0,0,0,0);}
 	to {background-color: rgba(0,0,0,.5);}
+}
+.ng-modal-close {
+	border-radius: 100px;
+	position: relative;
+	left: 98%;
+	top: -10px;
+	width: 25px;
+	height: 25px;
+	background-color: blue;
+	&:hover {
+		transition: all .5s;
+		background-color: red;	}
+	&:hover .forward-slash {
+		transition: all .5s;
+		background-color: black;
+		@include transform(rotate(-45deg));
+	}
+	&:hover .backward-slash {
+		transition: all .5s;
+		background-color: black;
+		@include transform(rotate(45deg));
+	}
+}
+.forward-slash {
+	width: 2px;
+	height: 20px;
+	background-color: blue;
+	position: absolute;
+	top: 2px;
+	left: 12px;
+}
+.backward-slash {
+	@extend .forward-slash;
 }
 
 .ng-modal-dialog {
