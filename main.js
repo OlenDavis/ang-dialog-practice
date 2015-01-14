@@ -29,6 +29,24 @@ angular.module("myApp", [])
 		$scope.selected = selection;
 		console.log(selection);
 	};
+	$scope.moveRight = function(selection){
+		console.log("right", selection);
+		if (selection > $scope.dialogContexts.length-2){
+			return;
+		}
+		else {
+			$scope.selected = selection+1;
+		}
+	};
+	$scope.moveLeft = function(selection){
+		console.log("something", selection);
+		if (selection <1){
+			return;
+		}
+		else{
+			$scope.selected = selection-1;
+		}
+	};
 
 }])
 .directive("dialog", function(){

@@ -150,6 +150,44 @@ body {
   -o-transform: rotateY(30deg);
   transform: rotateY(30deg); }
 
+.left-arrow, .right-arrow {
+  position: absolute;
+  top: 70px;
+  left: -40px;
+  height: 100px;
+  width: 35%;
+  background-color: red; }
+
+.left-arrow-middle, .left-arrow-bottom, .left-arrow-top {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  height: 10px;
+  width: 75px;
+  background-color: black;
+  border-radius: 5px; }
+
+.left-arrow-bottom, .left-arrow-top {
+  top: 65px;
+  left: 18px;
+  width: 45px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.left-arrow-top {
+  top: 35px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.right-arrow {
+  left: 238px; }
+
 .forward-slash, .backward-slash {
   width: 2px;
   height: 20px;

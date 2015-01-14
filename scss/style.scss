@@ -153,7 +153,41 @@ body {
 	border: 5px solid black;
 	@include transform(rotateY(30deg));
 }
+//Create Arrow
+.left-arrow {
+	position: absolute;
+	top: 70px;
+	left: -40px;
+	height: 100px;
+	width: 35%;
+	background-color: red;
+}
+.left-arrow-middle {
+	position: absolute;
+	top: 50px;
+	left: 20px;
+	height: 10px;
+	width: 75px;
+	background-color: black;
+	border-radius: 5px;
+}
+.left-arrow-bottom {
+	@extend .left-arrow-middle;
+	top: 65px;
+	left: 18px;
+	width: 45px;
+	@include transform(rotate(45deg));
+}
+.left-arrow-top {
+	@extend .left-arrow-bottom;
+	top: 35px;
+	@include transform(rotate(-45deg));
+}
 
+.right-arrow {
+	@extend .left-arrow;
+	left: 238px;
+}
 
 //Create X for closing modal
 .forward-slash {
