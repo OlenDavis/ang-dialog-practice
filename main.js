@@ -1,6 +1,5 @@
 angular.module("myApp", [])
 .controller("MyController", ["$scope", function($scope){
-	console.log('set up angular');
 	$scope.dialogContexts = [{
 		title: 'A Dialog',
 		field: 'something'
@@ -27,10 +26,8 @@ angular.module("myApp", [])
 	};
 	$scope.clickDialog = function(selection){
 		$scope.selected = selection;
-		console.log(selection);
 	};
 	$scope.moveRight = function(selection){
-		console.log("right", selection);
 		if (selection > $scope.dialogContexts.length-2){
 			return;
 		}
@@ -39,7 +36,6 @@ angular.module("myApp", [])
 		}
 	};
 	$scope.moveLeft = function(selection){
-		console.log("something", selection);
 		if (selection <1){
 			return;
 		}
@@ -59,13 +55,6 @@ angular.module("myApp", [])
 		replace: true,
 		transclude: true, //custom content for directive, will be used to indicate where content goes
 		link: function(scope, element, attrs) {
-			scope.dialogStyle = {};
-			if (attrs.width){
-				scope.dialogStyle.width = attrs.width;
-			}
-			if (attrs.height){
-				scope.dialogStyle.height = attrs.height;
-			}
 			scope.hideModal = function(){
 				scope.shown = false;
 			};
@@ -96,14 +85,3 @@ angular.module("myApp", [])
 		"</div>"
 	};
 });
-		// "<div class='carosel'>" +
-		// 	"<div class='left'>{{dialogContexts[selected-1].title}}</div>" +
-		// 	"<div class='left-arrow' ng-click='moveLeft(selected)'>" +
-		// 		"<div class='left-arrow-middle'></div>" +
-		// 		"<div class='left-arrow-bottom'></div>" +
-		// 		"<div class='left-arrow-top'></div>" +
-		// 	"</div>" +
-		// 	"<div class='middle' ng-model='selected'>{{dialogContexts[selected].title}}</div>" +
-		// 	"<div class='right-arrow' ng-click='moveRight(selected)'></div>" +
-		// 	"<div class='right'>{{dialogContexts[selected+1].title}}</div>" +
-		// "</div>"
