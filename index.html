@@ -9,11 +9,18 @@
 </head>
 <body ng-app="myApp" ng-controller="MyController">
 	<div class="container" ng-repeat="dialog in dialogContexts" ng-click="toggleModal(dialog)">{{dialog.title}}</div>
-	<dialog show='modalShown'>
-		<div>
-		<div>{{selected.title}}</div>
-		<p>{{selected.field}}</p>
+	<dialog shown='modalShown'>
+		<div ng-model="selected">
+		<div class="title">{{selected.title}}</div>
+		<p class="dialog">{{selected.field}}</p>
+		<p class="dialog">Update dialog field:
+			<input ng-model="selected.field" type="text"></input>
+		</p>
 		</div>
+	<dialog-shelf shown='modalShown'>
+		<div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog">{{dialog.title}}</div>
+	</dialog-shelf>
+
 	</dialog>
 </body>
 </html>

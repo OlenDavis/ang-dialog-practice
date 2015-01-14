@@ -13,8 +13,6 @@ body {
   line-height: 5.5em; }
   .container:hover {
     background-color: rgba(0, 0, 255, 0.5); }
-    .container:hover:before {
-      content: "Select "; }
 
 .ng-modal-overlay {
   position: absolute;
@@ -88,6 +86,26 @@ body {
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
 
+.ng-modal-dialog {
+  position: absolute;
+  padding: 5px;
+  width: 45%;
+  height: 10em;
+  left: 28%;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
+  box-shadow: 4px 4px 80px #000; }
+
+.title {
+  text-align: center; }
+
+.dialog {
+  text-align: center; }
+
 .forward-slash, .backward-slash {
   width: 2px;
   height: 20px;
@@ -99,17 +117,5 @@ body {
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
-
-.ng-modal-dialog {
-  position: absolute;
-  width: 50%;
-  top: 40%;
-  left: 25%;
-  background-color: #fff;
-  -webkit-box-shadow: 4px 4px 80px #000;
-  -moz-box-shadow: 4px 4px 80px #000;
-  -ms-box-shadow: 4px 4px 80px #000;
-  -o-box-shadow: 4px 4px 80px #000;
-  box-shadow: 4px 4px 80px #000; }
 
 /*# sourceMappingURL=style.css.map */

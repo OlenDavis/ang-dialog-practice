@@ -10,6 +10,15 @@ angular.module("myApp", [])
 	}, {
 		title: 'And Another Dialog',
 		field: 'with this'
+	}, {
+		title: 'Dialog Here',
+		field: 'stuff here'
+	}, {
+		title: 'Again Dialog',
+		field: 'more text'
+	}, {
+		title: 'Last Dialog',
+		field: 'last text'
 	}];
 	$scope.modalShown = false;
 	$scope.toggleModal = function(selection) {
@@ -17,13 +26,14 @@ angular.module("myApp", [])
 		console.log(selection);
 		$scope.modalShown = !$scope.modalShown;
 	};
+
 }])
 .directive("dialog", function(){
 	return {
 		restrict: 'E',
 		//will use show variable to determine if showing modal or not
 		scope: {
-			show: '='
+			shown: '='
 		},
 		replace: true,
 		transclude: true, //custom content for directive, will be used to indicate where content goes
@@ -36,11 +46,11 @@ angular.module("myApp", [])
 				scope.dialogStyle.height = attrs.height;
 			}
 			scope.hideModal = function(){
-				scope.show = false;
+				scope.shown = false;
 			};
 		},
 		template:
-		"<div class='ng-modal' ng-show='show'>" +
+		"<div class='ng-modal' ng-show='shown'>" +
 		//overlay will add a dim effect behind the modal
 			"<div class='ng-modal-overlay' ng-click='hideModal()'></div>" +
 			"<div class='ng-modal-dialog' ng-style='dialogStyle'>" +
@@ -50,6 +60,18 @@ angular.module("myApp", [])
 				"</div>" +
 				"<div class='ng-modal-dialog-content' ng-transclude></div>" +
 			"</div>" +
+		"</div>"
+	};
+})
+.directive("dialogShelf", function(){
+	return {
+		restrict: 'E',
+		scope: {
+			shown: '='
+		},
+		transclude: true,
+		template:
+		"<div ng-show='shown' ng-transclude>" +
 		"</div>"
 	};
 });
