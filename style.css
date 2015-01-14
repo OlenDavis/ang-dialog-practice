@@ -87,6 +87,9 @@ body {
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
 
+.ng-modal {
+  margin-top: -10%; }
+
 .ng-modal-dialog {
   position: absolute;
   padding: 5px;
@@ -122,13 +125,23 @@ body {
   height: 40%;
   width: 60%;
   background-color: red;
-  border: 5px solid black; }
+  border: 5px solid black;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
+  box-shadow: 4px 4px 80px #000; }
 
 .left, .right {
   top: 60px;
   height: 35%;
   left: -100%;
   background-color: white;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
+  box-shadow: 4px 4px 80px #000;
   -webkit-transform: rotateY(-30deg);
   -moz-transform: rotateY(-30deg);
   -ms-transform: rotateY(-30deg);
@@ -139,33 +152,43 @@ body {
   left: 150%;
   position: absolute;
   background-color: white;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
+  box-shadow: 4px 4px 80px #000;
   -webkit-transform: rotateY(30deg);
   -moz-transform: rotateY(30deg);
   -ms-transform: rotateY(30deg);
   -o-transform: rotateY(30deg);
   transform: rotateY(30deg); }
 
-.left-arrow, .right-arrow {
+.left-arrow {
   position: absolute;
   top: 70px;
-  left: -50px;
+  left: -20%;
   height: 100px;
   width: 100px;
   background-color: rgba(255, 0, 0, 0.5);
-  border-radius: 100px; }
-  .left-arrow:hover .left-arrow-middle, .right-arrow:hover .left-arrow-middle, .left-arrow:hover .left-arrow-bottom, .right-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+  border-radius: 100px;
+  -webkit-box-shadow: 4px 4px 80px #000;
+  -moz-box-shadow: 4px 4px 80px #000;
+  -ms-box-shadow: 4px 4px 80px #000;
+  -o-box-shadow: 4px 4px 80px #000;
+  box-shadow: 4px 4px 80px #000; }
+  .left-arrow:hover .left-arrow-middle, .left-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     background-color: black; }
-  .left-arrow:hover .left-arrow-bottom, .right-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+  .left-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
-  .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+  .left-arrow:hover .left-arrow-top {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
@@ -189,7 +212,47 @@ body {
   top: 35px; }
 
 .right-arrow {
-  left: 238px; }
+  position: relative;
+  top: 70px;
+  left: 95%;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 100px; }
+  .right-arrow:hover .right-arrow-middle, .right-arrow:hover .right-arrow-bottom, .right-arrow:hover .right-arrow-top {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: black; }
+  .right-arrow:hover .right-arrow-bottom, .right-arrow:hover .right-arrow-top {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .right-arrow:hover .right-arrow-top {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+.right-arrow-middle, .right-arrow-bottom, .right-arrow-top {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  height: 10px;
+  width: 75px;
+  border-radius: 5px; }
+
+.right-arrow-bottom, .right-arrow-top {
+  top: 65px;
+  left: 49px;
+  width: 45px; }
+
+.right-arrow-top {
+  top: 35px; }
 
 .forward-slash, .backward-slash {
   width: 2px;

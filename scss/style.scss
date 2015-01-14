@@ -96,7 +96,9 @@ body {
 		@include transform(rotate(45deg));
 	}
 }
-
+.ng-modal {
+	margin-top:-10%;
+}
 .ng-modal-dialog {
   position: absolute;
   padding: 5px;
@@ -132,6 +134,7 @@ body {
 	width: 60%;
 	background-color: red;
 	border: 5px solid black;
+	@include box-shadow(4px 4px 80px #000);
 }
 .left {
 	@extend .middle;
@@ -139,6 +142,7 @@ body {
 	height: 35%;
 	left: -100%;
 	background-color: white;
+	@include box-shadow(4px 4px 80px #000);
 	@include transform(rotateY(-30deg));
 }
 .right {
@@ -146,6 +150,7 @@ body {
 	left: 150%;
 	position: absolute;
 	background-color: white;
+	@include box-shadow(4px 4px 80px #000);
 	@include transform(rotateY(30deg));
 }
 //Create Left Arrow
@@ -153,11 +158,12 @@ body {
 .left-arrow {
 	position: absolute;
 	top: 70px;
-	left: -50px;
+	left: -20%;
 	height: 100px;
 	width: 100px;
 	background-color: rgba(255, 0, 0, .5);
 	border-radius: 100px;
+	@include box-shadow(4px 4px 80px #000);
 	&:hover .left-arrow-middle {
 		@include transition(all .5s ease);
 		background-color: black;
@@ -188,12 +194,46 @@ body {
 	top: 35px;
 }
 
+//Create right arrow
 .right-arrow {
-	@extend .left-arrow;
-	left: 238px;
+	position: relative;
+	top: 70px;
+	left: 95%;
+	height: 100px;
+	width: 100px;
+	background-color: rgba(255, 0, 0, .5);
+	border-radius: 100px;
+	&:hover .right-arrow-middle {
+		@include transition(all .5s ease);
+		background-color: black;
+	}
+	&:hover .right-arrow-bottom{
+		@include transform(rotate(-45deg));
+	}
+	&:hover .right-arrow-top {
+		@include transform(rotate(45deg));
+	}
+}
+.right-arrow-middle {
+	position: absolute;
+	top: 50px;
+	left: 15px;
+	height: 10px;
+	width: 75px;
+	border-radius: 5px;
+}
+.right-arrow-bottom {
+	@extend .right-arrow-middle;
+	top: 65px;
+	left: 49px;
+	width: 45px;
+}
+.right-arrow-top {
+	@extend .right-arrow-bottom;
+	top: 35px;
 }
 
-//Create right arrow
+
 
 
 //Create X for closing modal

@@ -27,10 +27,11 @@
 				<div class="left-arrow-top"></div>
 			</div>
 			<div class="middle" ng-model="selected">{{dialogContexts[selected].title}}</div>
-			<div class="right-arrow" ng-click="moveRight(selected)"></div>
-				<div class="left-arrow-middle"></div>
-				<div class="left-arrow-bottom"></div>
-				<div class="left-arrow-top"></div>
+			<div class="right-arrow" ng-click="moveRight(selected)">
+				<div class="right-arrow-middle"></div>
+				<div class="right-arrow-bottom"></div>
+				<div class="right-arrow-top"></div>
+			</div>
 			<div class="right">{{dialogContexts[selected+1].title}}</div>
 		</div>
 	</dialog-shelf>
