@@ -18,7 +18,7 @@
 		</p>
 		</div>
 	<dialog-shelf shown='modalShown'>
-		<div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog">{{dialog.title}}</div>
+		<div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog(dialog)">{{dialog.title}}</div>
 	</dialog-shelf>
 
 	</dialog>

@@ -23,8 +23,10 @@ angular.module("myApp", [])
 	$scope.modalShown = false;
 	$scope.toggleModal = function(selection) {
 		$scope.selected = selection;
-		console.log(selection);
 		$scope.modalShown = !$scope.modalShown;
+	};
+	$scope.clickDialog = function(selection){
+		$scope.selected = selection;
 	};
 
 }])
