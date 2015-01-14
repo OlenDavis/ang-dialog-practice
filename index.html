@@ -8,18 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body ng-app="myApp" ng-controller="MyController">
-	<div class="container" ng-repeat="dialog in dialogContexts" ng-click="toggleModal(dialog)">{{dialog.title}}</div>
+	<div class="container" ng-repeat="dialog in dialogContexts" ng-click="toggleModal($index)">{{dialog.title}}</div>
 	<dialog shown='modalShown'>
-		<div ng-model="selected">
-		<div class="title">{{selected.title}}</div>
-		<p class="dialog">{{selected.field}}</p>
+		<div ng-model="dialogContexts">
+		<div class="title">{{dialogContexts[selected].title}}</div>
+		<p class="dialog">{{dialogContexts[selected].field}}</p>
 		<p class="dialog">Update dialog field:
-			<input ng-model="selected.field" type="text"></input>
+			<input ng-model="dialogContexts[selected].field" type="text"></input>
 		</p>
 		</div>
 	<dialog-shelf shown='modalShown'>
-		<div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog(dialog)">{{dialog.title}}</div>
-		<div class="middle" ng-model=""></div>
+		<div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog($index)">{{dialog.title}}</div>
+		<div class="left">{{selected$index}}</div>
+		<div class="middle">{{selected.title}}{{selected.$index}}</div>
 	</dialog-shelf>
 
 	</dialog>

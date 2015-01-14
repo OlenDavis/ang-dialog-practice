@@ -27,6 +27,7 @@ angular.module("myApp", [])
 	};
 	$scope.clickDialog = function(selection){
 		$scope.selected = selection;
+		console.log(selection);
 	};
 
 }])
