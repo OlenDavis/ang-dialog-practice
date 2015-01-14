@@ -107,9 +107,6 @@ body {
 .dialog {
   text-align: center; }
 
-.check {
-  position: relative; }
-
 .carosel {
   height: 20em;
   width: 45%;
@@ -130,9 +127,8 @@ body {
 .left, .right {
   top: 60px;
   height: 35%;
-  left: -70%;
+  left: -100%;
   background-color: white;
-  border: 5px solid black;
   -webkit-transform: rotateY(-30deg);
   -moz-transform: rotateY(-30deg);
   -ms-transform: rotateY(-30deg);
@@ -140,10 +136,9 @@ body {
   transform: rotateY(-30deg); }
 
 .right {
-  left: 120%;
+  left: 150%;
   position: absolute;
   background-color: white;
-  border: 5px solid black;
   -webkit-transform: rotateY(30deg);
   -moz-transform: rotateY(30deg);
   -ms-transform: rotateY(30deg);
@@ -153,37 +148,45 @@ body {
 .left-arrow, .right-arrow {
   position: absolute;
   top: 70px;
-  left: -40px;
+  left: -50px;
   height: 100px;
-  width: 35%;
-  background-color: red; }
+  width: 100px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 100px; }
+  .left-arrow:hover .left-arrow-middle, .right-arrow:hover .left-arrow-middle, .left-arrow:hover .left-arrow-bottom, .right-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: black; }
+  .left-arrow:hover .left-arrow-bottom, .right-arrow:hover .left-arrow-bottom, .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .left-arrow:hover .left-arrow-top, .right-arrow:hover .left-arrow-top {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
 
 .left-arrow-middle, .left-arrow-bottom, .left-arrow-top {
   position: absolute;
   top: 50px;
-  left: 20px;
+  left: 10px;
   height: 10px;
   width: 75px;
-  background-color: black;
   border-radius: 5px; }
 
 .left-arrow-bottom, .left-arrow-top {
   top: 65px;
-  left: 18px;
-  width: 45px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg); }
+  left: 7px;
+  width: 45px; }
 
 .left-arrow-top {
-  top: 35px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg); }
+  top: 35px; }
 
 .right-arrow {
   left: 238px; }

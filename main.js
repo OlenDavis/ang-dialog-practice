@@ -96,3 +96,14 @@ angular.module("myApp", [])
 		"</div>"
 	};
 });
+		// "<div class='carosel'>" +
+		// 	"<div class='left'>{{dialogContexts[selected-1].title}}</div>" +
+		// 	"<div class='left-arrow' ng-click='moveLeft(selected)'>" +
+		// 		"<div class='left-arrow-middle'></div>" +
+		// 		"<div class='left-arrow-bottom'></div>" +
+		// 		"<div class='left-arrow-top'></div>" +
+		// 	"</div>" +
+		// 	"<div class='middle' ng-model='selected'>{{dialogContexts[selected].title}}</div>" +
+		// 	"<div class='right-arrow' ng-click='moveRight(selected)'></div>" +
+		// 	"<div class='right'>{{dialogContexts[selected+1].title}}</div>" +
+		// "</div>"
