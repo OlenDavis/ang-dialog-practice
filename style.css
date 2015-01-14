@@ -15,6 +15,13 @@ body {
   .container:hover {
     background-color: rgba(0, 0, 255, 0.5); }
 
+.ng-modal {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
+
 .ng-modal-overlay {
   position: absolute;
   top: 0;
@@ -87,11 +94,9 @@ body {
     -o-transform: rotate(45deg);
     transform: rotate(45deg); }
 
-.ng-modal {
-  margin-top: -10%; }
-
 .ng-modal-dialog {
   position: absolute;
+  margin-top: 20%;
   padding: 5px;
   width: 45%;
   height: 10em;
