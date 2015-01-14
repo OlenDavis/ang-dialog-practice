@@ -125,7 +125,7 @@ body {
 .carosel {
 	height: 20em;
 	width: 45%;
-	left: 25%;
+	left: 28%;
 	position: absolute;
 	// background-color: purple;
 	perspective: 10px;
@@ -134,7 +134,7 @@ body {
 .middle {
 	position: absolute;
 	top: 50px;
-	left: 25%;
+	left: 15%;
 	height: 40%;
 	width: 60%;
 	background-color: red;
@@ -145,14 +145,14 @@ body {
 	@extend .middle;
 	top: 60px;
 	height: 35%;
-	left: -100%;
+	left: -115%;
 	background-color: white;
 	@include box-shadow(4px 4px 80px #000);
 	@include transform(rotateY(-30deg));
 }
 .right {
 	@extend .left;
-	left: 150%;
+	left: 149%;
 	position: absolute;
 	background-color: white;
 	@include box-shadow(4px 4px 80px #000);
@@ -163,80 +163,107 @@ body {
 .left-arrow {
 	position: absolute;
 	top: 70px;
-	left: -20%;
+	left: -40%;
 	height: 100px;
-	width: 100px;
+	width: 40%;
 	background-color: rgba(255, 0, 0, .5);
 	border-radius: 100px;
 	@include box-shadow(4px 4px 80px #000);
 	&:hover .left-arrow-middle {
 		@include transition(all .5s ease);
-		background-color: black;
+		@include animation(enlarge-middle 1s linear infinite);
 	}
 	&:hover .left-arrow-bottom{
-		@include transform(rotate(45deg));
+		@include animation(enlarge-bottom 1s linear infinite);
 	}
 	&:hover .left-arrow-top {
-		@include transform(rotate(-45deg));
+		@include animation(enlarge-top 1s linear infinite);
 	}
 }
+@include keyframes(enlarge-middle) {
+	0% {height: 10px}
+	100% {height: 15px; top: 48px;}
+}
+@include keyframes(enlarge-bottom) {
+	0% {height: 10px}
+	100% {height: 15px; top: 70px; width: 58px;}
+}
+@include keyframes(enlarge-top){
+	0% {height: 10px}
+	100% {height: 15px; top: 25px; width:58px;}
+}
+
 .left-arrow-middle {
 	position: absolute;
 	top: 50px;
-	left: 10px;
+	left: 20%;
 	height: 10px;
-	width: 75px;
+	width: 70%;
 	border-radius: 5px;
+	background-color: black;
 }
 .left-arrow-bottom {
 	@extend .left-arrow-middle;
 	top: 65px;
-	left: 7px;
+	left: 16%;
 	width: 45px;
+	@include transform(rotate(45deg));
 }
 .left-arrow-top {
 	@extend .left-arrow-bottom;
 	top: 35px;
+	@include transform(rotate(-45deg));	
 }
 
 //Create right arrow
 .right-arrow {
-	position: relative;
+	position: absolute;
 	top: 70px;
-	left: 95%;
+	left: 94%;
 	height: 100px;
-	width: 100px;
+	width: 40%;
 	background-color: rgba(255, 0, 0, .5);
 	border-radius: 100px;
 	@include box-shadow(4px 4px 80px #000);
 	&:hover .right-arrow-middle {
 		@include transition(all .5s ease);
-		background-color: black;
+		@include animation(enlarge-middle 1s linear infinite);
 	}
 	&:hover .right-arrow-bottom{
-		@include transform(rotate(-45deg));
+		@include animation(enlarge-bottom-right 1s linear infinite);
 	}
 	&:hover .right-arrow-top {
-		@include transform(rotate(45deg));
+		@include animation(enlarge-top-right 1s linear infinite);
 	}
+}
+@include keyframes(enlarge-bottom-right) {
+	0% {height: 10px}
+	100% {height: 15px; top: 60px; width: 58px;left: 42%}
+}
+@include keyframes(enlarge-top-right){
+	0% {height: 10px}
+	100% {height: 15px; top: 30px; width:58px; left: 42%}
 }
 .right-arrow-middle {
 	position: absolute;
 	top: 50px;
-	left: 15px;
+	left: 15%;
 	height: 10px;
-	width: 75px;
+	width: 70%;
 	border-radius: 5px;
+	background-color: black;
 }
 .right-arrow-bottom {
 	@extend .right-arrow-middle;
 	top: 65px;
-	left: 49px;
+	left: 46%;
 	width: 45px;
+	@include transform(rotate(-45deg));
 }
 .right-arrow-top {
 	@extend .right-arrow-bottom;
 	top: 35px;
+	@include transform(rotate(45deg));
 }
 
 
