@@ -1,4 +1,4 @@
 # ang-dialog-practice
 AngularJS Dialogs
 
-used Grunt to compile files, example use of Angular directives/custom dialogs
+used Grunt to compile files, example use of AngularJS directives/custom dialogs
