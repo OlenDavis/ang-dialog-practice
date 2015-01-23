@@ -7,19 +7,30 @@
 	<script src="dist/app.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<!--1. Rather than simply using ng-controller="MyController" if you had added an as MyController making it ng-controller="MyController as MyController", you will make everything more readable and less fragile (see notes 2 and 3)-->
 <body ng-app="myApp" ng-controller="MyController">
+	<!--2. It would be clearer had you simply written ng-click="modalShown = true; selected = $index;" however, doing so would betray the problem with using expressions like modalShown and selectedIndex rather than MyController.modalShown and MyController.selectedIndex-->
 	<div class="container" ng-repeat="dialog in dialogContexts" ng-click="toggleModal($index)">{{dialog.title}}</div>
-	<dialog shown='modalShown'>
-		<div ng-model="dialogContexts">
-		<div class="title">{{dialogContexts[selected].title}}</div>
-		<p class="dialog">{{dialogContexts[selected].field}}</p>
-		<p class="dialog">Update dialog field:
-			<input ng-model="dialogContexts[selected].field" type="text"></input>
-		</p>
+
+	<!--3. binding shown (a two-way bound scope attribute) to the expression modalShown, rather than something like MyController.modalShown is fragile and exposes you to accidentally assigning modalShown onto a new scope created by other directives above this, for instance if this dialog were in an ng-if-->
+	<dialog shown='modalShown'><!--4. fundamental misunderstanding of what I wanted; I intended there to be one directive which functioned as a dialog/modal, and another, which also functioned as a modal (covering everything on the page) but with a shelf or carousel of dialogs, all of which were on top of the whole screen (I really should have used the term "carousel"). So the idea of putting the dialog shelf inside the dialog's contents and binding both of their shown expressions would always make the dialog inaccessible (because the dialog shelf is also shown when the dialog is, and since it's in it, it should logically have to be over it)-->
+
+		<div ng-model="dialogContexts"><!--5. ng-model here doesn't make sense; ng-model is for inputs and the like that both receive changes/input from the browser, and may need to receive changes from the expression it's bound to, in this case, dialogContexts, which doesn't function.-->
+			<div class="title">{{dialogContexts[selected].title}}</div>
+			<p class="dialog">{{dialogContexts[selected].field}}</p>
+			<p class="dialog">
+				Update dialog field:
+				<input ng-model="dialogContexts[selected].field" type="text"></input><!--6. While functional (because browsers cater to *all* developers, this is incorrect; it should have been <input .../> not <input ...></input>-->
+			</p>
 		</div>
+	<!--7. Unfortunately - and this is big - this is a complete misunderstanding of the dialog-shelf. It was supposed to have a dialog-contexts with an expression like "context in dialogContexts" that defines the series of dialogs to display, while the shown attribute is two-way bound to the currently active/centered item (in this case, context) in all of them (in this case, dialogContexts).-->
 	<dialog-shelf shown='modalShown'>
+		<!--8. cleanup-->
 		<!-- <div class="container" ng-repeat="dialog in dialogContexts" ng-click="clickDialog($index)">{{dialog.title}}</div> -->
-		<div class="carosel">
+		
+		<div class="carosel"><!--9. misspelling - not huge, but spelling matters-->
+		
+			<!--10. these five divs (.left, .left-arrow, .middle, .right-arrow, and .right) are the things that should be done in the dialog-shelf's template; and, the {{dialogContexts[selected-1].title}}, {{dialogContexts[selected].title}}, and {{dialogContexts[selected+1].title}} interpolators are what should have been done with transclusion, by transcluding the contents of the dialog-shelf directive calling its $transclude linking function with each of the context objects in dialogContexts for each of the dialogs which are here .left, .middle, and .right.-->
 			<div class="left">{{dialogContexts[selected-1].title}}</div>
 			<div class="left-arrow" ng-click="moveLeft(selected)">
 				<div class="left-arrow-middle"></div>
