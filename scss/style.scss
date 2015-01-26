@@ -1,4 +1,5 @@
 @mixin box-shadow($shadow) {
+	// You could do this with a loop through the prefixes as well like @each $prefix in "-webkit-", "-moz-", "-ms-", "-o-", "" { #{ unquote( $prefix ) }box-shadow: $shadow; }
 	-webkit-box-shadow: $shadow;
 	-moz-box-shadow: $shadow;
 	-ms-box-shadow: $shadow;
@@ -6,11 +7,14 @@
 	box-shadow: $shadow;
 }
 @mixin animation($animate) {
+	// I'm surprised you didn't prefix this as well.
 	animation: $animate;
 	-webkit-animation: $animate;
 }
 
 @mixin keyframes($animationName) {
+    // You could to this with the @each looping as well.
+    // (Also, the difference in tabbing between this and other sections suggests to me either you're unfamiliar with your editor or you were copying/pasting code, which isn't an unforgiveable sin, but must be confessed regardless, especially for something like this.)
     @-webkit-keyframes #{$animationName} {
         @content;
     }
@@ -25,6 +29,7 @@
     }
 }
 @mixin transform($transform) {
+	// At this point, I'm very concerned about copying/pasting.
 	-webkit-transform: $transform;
 	-moz-transform: $transform;
 	-ms-transform: $transform;
@@ -32,6 +37,7 @@
 	transform: $transform;
 }
 @mixin transition($transition) {
+	// From tabs, to four spaces, to two spaces...
   -webkit-transition: $transition;
   -moz-transition: $transition;
   -o-transition: $transition;
